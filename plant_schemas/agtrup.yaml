@@ -1,0 +1,89 @@
+plant: "Agtrup WWTP (Denmark)"
+source_model: "CCSS-IX trained on Agtrup BPR/BNR dataset"
+observable_states:
+  -
+    name: "T1_NH4"
+    long_name: "ammonium (tank 1)"
+    units: "mg-N/L"
+    index: 0
+  -
+    name: "T1_PO4"
+    long_name: "phosphate (tank 1)"
+    units: "mg-P/L"
+    index: 1
+latent_states:
+  -
+    name: "lat_0"
+    description: "dominant biological activity proxy (drives PAO phosphorus uptake and AOB nitrification)"
+  -
+    name: "lat_1"
+    description: "secondary process dynamic (modulates response rate)"
+  -
+    name: "lat_2"
+    description: "tertiary transient dynamic"
+controls:
+  -
+    name: "T1_O2"
+    description: "dissolved oxygen setpoint (tank 1), mg-O2/L \u2014 primary nitrification control"
+  -
+    name: "METAL_Q"
+    description: "metal salt dosing rate (FeCl3/AlSO4) \u2014 chemical phosphorus backup"
+  -
+    name: "IN_METAL_Q"
+    description: "influent metal pre-dosing rate"
+disturbances:
+  -
+    name: "TEMPERATURE"
+    description: "wastewater temperature \u2014 affects reaction rates"
+  -
+    name: "MAX_CF"
+    description: "carbon feed rate (VFA/acetate) \u2014 essential for biological P removal (PAO)"
+  -
+    name: "IN_Q"
+    description: "influent flow rate \u2014 hydraulic loading"
+regimes:
+  -
+    id: 0
+    name: "aerobic-fast"
+    description: "aerobic-fast (k=0): high O2, rapid nitrification and P-release/uptake cycle active"
+    empirical_occupancy: 0.2287
+  -
+    id: 1
+    name: "standard"
+    description: "standard (k=1): balanced aerobic-anoxic, typical BNR operating state"
+    empirical_occupancy: 0.5373
+  -
+    id: 2
+    name: "slow-anoxic"
+    description: "slow-anoxic (k=2): low O2, suppressed nitrification, elevated P-release risk"
+    empirical_occupancy: 0.234
+timescales_minutes_per_state_per_regime:
+  T1_NH4:
+    - 13.16
+    - 18.5
+    - 96.9
+  T1_PO4:
+    - 11.94
+    - 88.97
+    - 84.82
+  lat_0:
+    - 3.85
+    - 20.27
+    - 15.59
+  lat_1:
+    - 3.57
+    - 15.8
+    - 16.49
+  lat_2:
+    - 3.71
+    - 5.93
+    - 21.27
+counterfactual_horizon_minutes: 400
+counterfactual_primary_targets:
+  - "T1_NH4"
+  - "T1_PO4"
+w_eff_shape:
+  - 3
+  - 5
+  - 5
+w_eff_file: "agtrup_W_eff.npy"

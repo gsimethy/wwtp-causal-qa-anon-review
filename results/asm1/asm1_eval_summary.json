@@ -1,0 +1,34 @@
+{
+  "n": 12,
+  "by_condition": {
+    "base": {
+      "pass": 8,
+      "total": 12,
+      "acc": 0.6666666666666666
+    },
+    "base+header": {
+      "pass": 10,
+      "total": 12,
+      "acc": 0.8333333333333334
+    },
+    "base+asm1_rag": {
+      "pass": 11,
+      "total": 12,
+      "acc": 0.9166666666666666
+    }
+  },
+  "high_confidence_only": {
+    "base": {
+      "pass": 5,
+      "total": 8
+    },
+    "base+header": {
+      "pass": 6,
+      "total": 8
+    },
+    "base+asm1_rag": {
+      "pass": 7,
+      "total": 8
+    }
+  }
+}

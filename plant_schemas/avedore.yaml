@@ -1,0 +1,65 @@
+plant: "Aved\u00f8re WWTP (Denmark)"
+source_model: "CCSS-IX trained on Aved\u00f8re N2O dataset 2022-2024"
+state_variables:
+  -
+    name: "NH4"
+    long_name: "ammonium"
+    units: "mg-N/L"
+    index: 0
+  -
+    name: "NO3"
+    long_name: "nitrate"
+    units: "mg-N/L"
+    index: 1
+  -
+    name: "N2O"
+    long_name: "nitrous oxide"
+    units: "mg-N/L"
+    index: 2
+  -
+    name: "O2"
+    long_name: "dissolved oxygen"
+    units: "mg-O2/L"
+    index: 3
+  -
+    name: "SS"
+    long_name: "suspended solids"
+    units: "mg/L"
+    index: 4
+regimes:
+  -
+    id: 0
+    name: "aerobic-fast"
+    short: "k=0"
+    description: "aerobic-fast (k=0): high dissolved oxygen, rapid nitrification, AOB fully active"
+    empirical_occupancy: 0.26
+  -
+    id: 1
+    name: "standard"
+    short: "k=1"
+    description: "standard (k=1): mixed aerobic-anoxic, most common operating state"
+    empirical_occupancy: 0.573
+  -
+    id: 2
+    name: "slow-anoxic"
+    short: "k=2"
+    description: "slow-anoxic (k=2): low oxygen, AOB suppressed, elevated N2O emission risk"
+    empirical_occupancy: 0.167
+timescales_minutes_shape:
+  - 3
+  - 5
+timescales_minutes_layout: "rows = regimes [aerobic-fast, standard, slow-anoxic]; cols = states [NH4, NO3, N2O, O2, SS]"
+timescales_minutes_file: "avedore_tau.npy"
+cii_early_warning:
+  z_threshold: 2.0
+  coupling_rate: 0.96
+  n_total_spikes: 1857
+  n_coupled: 1784
+  n_isolated: 73
+  lead_time_median_minutes: 32
+w_eff_shape:
+  - 3
+  - 5
+  - 5
+w_eff_layout: "shape (K=3 regimes, N=5 states, N=5 states); W[k,i,j] = effective coupling from state j to state i in regime k"
+w_eff_file: "avedore_W_eff.npy"

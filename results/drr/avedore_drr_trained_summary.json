@@ -1,0 +1,41 @@
+{
+  "anomaly": {
+    "score": 0.8383838383838385,
+    "passed": 26,
+    "total": 33
+  },
+  "causal_edge": {
+    "score": 0.9393939393939394,
+    "passed": 31,
+    "total": 33
+  },
+  "counterfactual": {
+    "score": 0.6868686868686869,
+    "passed": 17,
+    "total": 33
+  },
+  "early_warning": {
+    "score": 0.7474747474747475,
+    "passed": 22,
+    "total": 33
+  },
+  "multi_hop": {
+    "score": 0.8712121212121213,
+    "passed": 21,
+    "total": 33
+  },
+  "regime": {
+    "score": 0.9696969696969697,
+    "passed": 32,
+    "total": 33
+  },
+  "OVERALL": {
+    "score": 0.7525252525252525,
+    "passed": 149,
+    "total": 198
+  },
+  "_meta": {
+    "avg_params_retrieved": 49.525252525252526,
+    "avg_struct_tokens": 49.525252525252526
+  }
+}

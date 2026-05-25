@@ -1,0 +1,46 @@
+{
+  "agtrup_causal_edge": {
+    "score": 0.8333333333333334,
+    "passed": 5,
+    "total": 6
+  },
+  "agtrup_regime": {
+    "score": 1.0,
+    "passed": 6,
+    "total": 6
+  },
+  "causal_transfer": {
+    "score": 1.0,
+    "passed": 6,
+    "total": 6
+  },
+  "counterfactual_transfer": {
+    "score": 0.8571428571428571,
+    "passed": 6,
+    "total": 7
+  },
+  "cross_plant": {
+    "score": 0.8,
+    "passed": 4,
+    "total": 5
+  },
+  "process_knowledge": {
+    "score": 1.0,
+    "passed": 5,
+    "total": 5
+  },
+  "regime_reasoning": {
+    "score": 0.8333333333333333,
+    "passed": 3,
+    "total": 5
+  },
+  "OVERALL": {
+    "score": 0.875,
+    "passed": 35,
+    "total": 40
+  },
+  "_meta": {
+    "avg_params_retrieved": 42.375,
+    "avg_struct_tokens": 42.375
+  }
+}
