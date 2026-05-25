@@ -41,9 +41,9 @@ The four benchmarks are released here in full, not as a subset.
 |---|---:|---|
 | [`benchmarks/causal_qa_bench.jsonl`](benchmarks/causal_qa_bench.jsonl) | 198 | The Avedøre 198-question Causal Q&A Benchmark — the paper's primary evaluation set, covering six causal categories (causal_edge, regime, counterfactual, anomaly, early_warning, multi_hop), 33 per category. |
 | [`benchmarks/agtrup_bench.jsonl`](benchmarks/agtrup_bench.jsonl) | 40 | Agtrup cross-plant benchmark: the same six categories adapted to a biological nutrient removal (BPR/BNR) plant with disjoint state variables (T1_NH4, T1_PO4) and a different sensor topology. |
-| [`benchmarks/asm1_textbook_bench.jsonl`](benchmarks/asm1_textbook_bench.jsonl) | 40 | ASM1 textbook validation set, used to check that grounding methods do not regress on canonical biological wastewater dynamics. |
+| [`benchmarks/asm1_textbook_bench.jsonl`](benchmarks/asm1_textbook_bench.jsonl) | 12 | ASM1 textbook validation set, used to check that grounding methods do not regress on canonical biological wastewater dynamics. |
 | [`benchmarks/cf_bench.jsonl`](benchmarks/cf_bench.jsonl) | 60 | Counterfactual Q&A benchmark used in §5.5 (single-turn counterfactual queries). |
-| [`benchmarks/cfm_bench.jsonl`](benchmarks/cfm_bench.jsonl) | 60 | Multi-turn counterfactual variant. |
+| [`benchmarks/cfm_bench.jsonl`](benchmarks/cfm_bench.jsonl) | 8 | Multi-turn counterfactual variant (representative subset; full set forthcoming). |
 | [`benchmarks/bootstrap_ci.json`](benchmarks/bootstrap_ci.json) | — | Precomputed bootstrap 95% CIs (10,000 resamples) for each method × category cell reported in the paper. |
 | [`benchmarks/bootstrap_ci_strict.json`](benchmarks/bootstrap_ci_strict.json) | — | The same, computed with the strict (exact-string-only) scorer, to bound the semantic-audit contribution. |
 
